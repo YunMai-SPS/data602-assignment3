@@ -1,12 +1,12 @@
 # data602-assignment3
 
-####Goal:
+#### Goal:
 This asssignment is to analyze time-series data for equities in the portfolio, building off of assignment #2. The app relies on heavy use of analytics, visual and display charts. The real-time data is used.
 
-####Data:
+#### Data:
 The historical data is obtained from Nasdaq website: http://www.nasdaq.com/g00/quotes/historical-quotes.aspx
 
-####Aims:
+#### Aims:
 **1.Technical indicators**
 
 The following technical indicators together with the historical data are shown in the table after clicking 'Studies' and 'Prediction' on the trade page.
