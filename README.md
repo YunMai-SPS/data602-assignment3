@@ -42,7 +42,7 @@ The correlation (-1 to 1) is displayed as an a column on the P/L table
 
 SVM are based on the idea of finding a hyperplane that best divides a dataset into two classes. The hyperplane as a line that linearly separates and classifies a set of data. Support vectors are the data points nearest to the hyperplane, the points of a data set that, if removed, would alter the position of the dividing hyperplane. The reason why I chose SVM is that SVM is a supervised machine learning algorithm that can be employed for both classification and regression purposes. Dataset is splited into train and test sets (0.8:0.2) and the training set is used to train the model. Then I tried the linear, polumonial, and RBF kernel to test he accurary and the linear kernel showed the best accuracy in prediction. 
 
-I like SVM because the accuracy score of SVM is quite high(0.8) and the computation is fast . It can be more efficient because it uses a subset of training points. But SVM is more commonly used in classification problems. It may not good at predicting the future stock price.
+I like SVM because the accuracy score of SVM is quite high(0.8) and the computation is fast . It can be more efficient because it uses a subset of training points. But SVM is more commonly used in classification problems. It may perform better in classification than in predicting the values.
 
 
 
