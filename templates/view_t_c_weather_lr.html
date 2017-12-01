@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tables and chart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="page", style="width: 1100px; height: 2000px;">
+	<h1>DA602 Assignment3: Trade App</h1>
+        <div id="col_chart" style=" width: 1000px; float:left;">
+	      <h2>
+                 {% for c in selectdic %}
+                   <p>Stock Price of {{c}} vs. NYC Weather</p>
+                 {% endfor %}
+              </h2>
+	      <p>Could the sunshine duration positively affect the markets' stock prices? Could the bad weather condition distract or delay the markets' analysts? The potential correlation between NYC weather and stock price is analyzed for fun.</p>  
+            <img src="data:image/png;base64, {{ plot_url }}">
+        </div>
+	
+	<div id="col_table_h" style="width: 1000px; height: 1000px; ">  
+      	    <h2>
+              {% for c in selectdic %}
+                <p>Historical Data of Stock Price of {{c}} and Weather</p>
+              {% endfor %}
+            </h2>
+              {{ tables[0]|safe }}
+        </div>
+    </div>
+    <br>
+        {% for error in errors %}
+           <h4>{{ error }}</h4>
+        {% endfor %}
+  </body>
+</html>
+    
+    

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Start Trading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page", style="width: 1100px; height: 2000px;">
+      <div class="container">
+        <h1>DA602 Assignment2: Trade App</h1>
+         <form role="form" method='POST' action="{{ url_for('trade') }}">
+            <div class="form-group">
+              <div class="input-group">
+		<h4>
+        	    {% for c in selectdic %}
+          		<p>You chose {{c}}. Please type again to conform.</p>
+                    {% endfor %}
+  		</h4>
+		<input type="text" class="form-control" id="smbl" name="input_symbol"><br>
+              </div>
+              <br>
+              <h4>Please enter the volume that you want to trade:</h4>
+              <input type="number" name="equity_volume" class="form-control" id="vol-box" placeholder="Enter Quantity..." style="max-width: 300px;" autofocus required>
+              <br>
+              <input type="radio" name="side" value="buy" checked> I want to buy<br>
+      	      <input type="radio" name="side" value="sell"> I want to sell<br>
+    	      <input type="radio" name="side" value="do nothing"> I want to do nothing<br>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <br>
+          {% for error in errors %}
+            <h4>{{ error }}</h4>
+          {% endfor %}
+        </div>
+        <br>
+
+        <div class="container" id="col_chart" style="width: 500px; float:left;">
+	         <h3>
+	            {% for c in selectdic %}
+                	<p>Stock Chart for {{c}}</p>
+              	    {% endfor %}
+                 </h3>
+              <img src="data:image/png;base64, {{ plot_url }}">
+        </div>
+    </div>
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>

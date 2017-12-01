@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tables and chart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="page", style="width: 1100px; height: 2000px;">
+	<h1>DA602 Assignment3: Trade App (Market Analytics)</h1>
+        <div class="container" id="col_chart" style="width: 500px; float:left;">
+	      <h2>
+                 {% for c in selectdic %}
+                   <p>Stock Chart for {{c}}</p>
+                 {% endfor %}
+              </h2>  
+            <img src="data:image/png;base64, {{ plot_url }}">
+        </div>
+	<div class="container" id="col_table_s" style="width: 500px; float:right;">  
+             <h2>
+               {% for c in selectdic %}
+                 <p>Statics of 100-Day Data for {{c}}</p>
+               {% endfor %}
+            </h2>
+               <h2>{{titles[1]}}</h2>
+                 {{ tables[1]|safe }}   
+        </div>
+        <div id="col_table_h" style="width: 500px; height: 1000px; ">  
+      	    <h2>
+              {% for c in selectdic %}
+                <p>100-Day Historical Data: {{c}}</p>
+              {% endfor %}
+            </h2>
+              {{ tables[0]|safe }}
+              
+        </div>
+    </div>
+    <br>
+        {% for error in errors %}
+           <h4>{{ error }}</h4>
+        {% endfor %}
+  </body>
+</html>
+    
+    

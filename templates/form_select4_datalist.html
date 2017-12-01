@@ -1,0 +1,14 @@
+<form method="POST" action="{{ url_for('last100') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">Ticker Symbol</span>
+            <input list="browsers" name="ticker_select" class="selectpicker form-control" onchange="target_1(this);target_2;">
+  	    <datalist id="browsers">
+    		{% for o in data %}
+                    <option value="{{ o.name }}">{{ o.name }}</option>
+                {% endfor %}
+            </datalist>
+    </div>
+    <button type="submit" class="btn btn-default">Show Last 100 Trades</button>
+  </div>
+</form>
